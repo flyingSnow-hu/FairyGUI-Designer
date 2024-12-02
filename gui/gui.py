@@ -7,12 +7,12 @@ import tkinter.messagebox as tk1
 import tkinter.filedialog
 from pathlib import Path
 
-# Add tkdesigner to path
+# Add fgui to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 try:
-    from tkdesigner.designer import Designer
+    from fgui.designer import Designer
 except ModuleNotFoundError:
-    raise RuntimeError("Couldn't add tkdesigner to the PATH.")
+    raise RuntimeError("Couldn't add fgui to the PATH.")
 
 
 # Path to asset files for this GUI window.

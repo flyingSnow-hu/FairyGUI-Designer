@@ -1,6 +1,8 @@
 """
 Small utility functions.
 """
+import os
+
 import requests
 from PIL import Image
 import io
@@ -21,5 +23,6 @@ def download_image(url, image_path):
     content = io.BytesIO(response.content)
     im = Image.open(content)
     im = im.resize((im.size[0] // 2, im.size[1] // 2), Image.LANCZOS)
+    os.makedirs(os.path.dirname(image_path), exist_ok=True)
     with open(image_path, "wb") as file:
         im.save(file)

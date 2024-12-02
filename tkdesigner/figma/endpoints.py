@@ -36,5 +36,5 @@ class Files:
             f"{self.API_ENDPOINT_URL}/images/{self.file_key}?ids={item_id}&scale=2",
             headers={"X-FIGMA-TOKEN": self.token}
         )
-
+        print(response.json())
         return response.json()["images"][item_id]
